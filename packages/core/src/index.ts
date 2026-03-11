@@ -30,3 +30,40 @@ export { defineConfig, resolveConfig, defaultConfig, type UserConfig } from './c
 
 // Main class
 export { NeoHexo } from './neo-hexo.js';
+
+// ── Phase 3: Core Subsystems ──
+
+// Box (file processor)
+export { Box, type ProcessorFn, type ProcessorEntry, type FileCacheEntry } from './box.js';
+
+// Router
+export { Router, RouterServiceKey, type RouteData, type RouteDataInput } from './router.js';
+
+// Render pipeline
+export {
+  RenderPipeline,
+  RenderServiceKey,
+  createRenderPipeline,
+  type Renderer,
+  type RenderOptions,
+  type RenderResult,
+} from './render.js';
+
+// Post processing
+export {
+  PostProcessor,
+  PostServiceKey,
+  createPostProcessor,
+  type CreatePostOptions,
+  type RenderPostOptions,
+  type FrontMatterParser,
+  type ContentRenderer,
+} from './post.js';
+
+// Scaffold
+export {
+  ScaffoldManager,
+  ScaffoldServiceKey,
+  createScaffoldManager,
+  type ScaffoldEntry,
+} from './scaffold.js';
