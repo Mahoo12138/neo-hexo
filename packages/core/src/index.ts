@@ -67,3 +67,19 @@ export {
   createScaffoldManager,
   type ScaffoldEntry,
 } from './scaffold.js';
+
+// Helper registry
+export {
+  HelperRegistry,
+  HelperRegistryKey,
+  type HelperFn,
+} from './helper-registry.js';
+
+// Command registry
+export {
+  CommandRegistry,
+  CommandRegistryKey,
+  type CommandArgs,
+  type CommandHandler,
+  type CommandEntry,
+} from './command-registry.js';

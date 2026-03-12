@@ -16,6 +16,8 @@ import { Router, RouterServiceKey } from './router.js';
 import { RenderPipeline, RenderServiceKey } from './render.js';
 import { PostProcessor, PostServiceKey, type FrontMatterParser } from './post.js';
 import { ScaffoldManager, ScaffoldServiceKey } from './scaffold.js';
+import { HelperRegistry, HelperRegistryKey } from './helper-registry.js';
+import { CommandRegistry, CommandRegistryKey } from './command-registry.js';
 
 // ─── NeoHexo ─────────────────────────────────────────────────────────────────
 
@@ -38,6 +40,10 @@ export class NeoHexo {
   post!: PostProcessor;
   /** Scaffold templates for new content. */
   scaffold!: ScaffoldManager;
+  /** Template helper functions registry. */
+  helpers!: HelperRegistry;
+  /** CLI command registry. */
+  commands!: CommandRegistry;
 
   private userConfig: UserConfig;
   private baseDir: string;
@@ -134,6 +140,14 @@ export class NeoHexo {
       },
     });
     this.ctx.provide(PostServiceKey, this.post);
+
+    // ── Helper Registry ──
+    this.helpers = new HelperRegistry();
+    this.ctx.provide(HelperRegistryKey, this.helpers);
+
+    // ── Command Registry ──
+    this.commands = new CommandRegistry();
+    this.ctx.provide(CommandRegistryKey, this.commands);
   }
 
   /**
