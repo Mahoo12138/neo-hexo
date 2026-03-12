@@ -1,0 +1,11 @@
+# 导航菜单
+items:
+  - label: 首页
+    url: /
+  - label: 归档
+    url: /archives/
+  - label: 关于
+    url: /about/
+  - label: GitHub
+    url: https://github.com/nicecai/neo-hexo
+    external: true

@@ -1,0 +1,19 @@
+{
+  "name": "neo-hexo-example",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Example Neo-Hexo blog site — demonstrates the framework in action.",
+  "scripts": {
+    "build": "neo-hexo generate",
+    "serve": "neo-hexo server",
+    "clean": "neo-hexo clean",
+    "new": "neo-hexo new post"
+  },
+  "dependencies": {
+    "neo-hexo": "workspace:*"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
