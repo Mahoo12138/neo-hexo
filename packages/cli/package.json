@@ -14,7 +14,7 @@
   },
   "files": ["dist/"],
   "dependencies": {
-    "citty": "^0.1.6",
+    "citty": "^0.2.1",
     "yaml": "^2.7.0"
   },
   "peerDependencies": {
