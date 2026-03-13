@@ -278,6 +278,10 @@ export default function themePlugin(options: ThemeOptions = {}): NeoHexoPlugin {
 
         const layoutPath = nodePath.join(themeDir, layoutDir);
 
+        // Mount the layout directory so templates can reference each other
+        // (e.g., @layout('base') in Edge.js)
+        renderPipeline.mountDir(layoutPath);
+
         // Create a render function that dispatches to the RenderPipeline
         const renderFn = async (
           source: string,
